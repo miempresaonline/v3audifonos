@@ -326,7 +326,7 @@ function App() {
                         disabled={isSubmitting}
                         className={`w-full bg-[#9c0720] hover:bg-[#666666] text-white font-semibold py-3.5 px-6 rounded-lg transition-all duration-300 ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
                       >
-                        {isSubmitting ? 'Enviando...' : 'Solicitar Información'}
+                        {isSubmitting ? 'Enviando...' : 'Enviar'}
                       </button>
                       
                       <p className="text-xs text-gray-500 text-center">
