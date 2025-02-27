@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseScale {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popupOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fade-in-view {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+}
+
+.popup-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  animation: fadeIn 1s ease forwards;
+}
+
+.popup-content {
+  animation: popupIn 1s ease forwards;
+}
+
+.popup-overlay.closing {
+  animation: fadeIn 1s ease reverse forwards;
+}
+
+.popup-content.closing {
+  animation: popupOut 1s ease forwards;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+@media (hover: none) {
+  .bg-fixed {
+    background-attachment: scroll;
+  }
+}
+
+.cta-button {
+  animation: pulseScale 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  animation: none;
+  transform: scale(1.1);
+  background-color: #9c0720;
+  color: white;
+}
+
+.max{
+    max-width: 100%;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.grayscale:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.logos-slider-container {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.logos-slider {
+  display: flex;
+  width: fit-content;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logos-slider-container:hover .animate-marquee {
+  animation-play-state: paused;
+}
